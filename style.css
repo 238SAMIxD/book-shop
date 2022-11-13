@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    width: 100%;
+}
+
+header {
+    height: 5sem;
+    background-color: lightgray;
+}
+
+h1,
+h2 {
+    text-align: center;
+    margin: 0;
+    padding-block: 1rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.books {
+    display: grid;
+    gap: 1em;
+}
+
+.cover {
+    vertical-align: top;
+}
+
+.info {
+    display: inline-flex;
+    flex-direction: column;
+    padding-inline: 1em;
+}
+
+.modal-close {
+    float: right;
+    cursor: pointer;
+}
