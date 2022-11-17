@@ -2,13 +2,14 @@ const root = document.querySelector("#root");
 
 const header = document.createElement("header");
 const h1 = document.createElement("h1");
-h1.textContent = "Book shop";
 const cart = document.createElement("div");
-cart.classList.add("cart");
 const cartCount = document.createElement("span");
+const cartIcon = document.createElement("i");
+
+h1.textContent = "Book shop";
+cart.classList.add("cart");
 cartCount.classList.add("cart-count");
 cartCount.textContent = "0";
-const cartIcon = document.createElement("i");
 cartIcon.classList.add("fa-solid", "fa-cart-shopping", "fa-xl", "cart-icon");
 
 cart.append(cartCount, cartIcon);
@@ -38,7 +39,8 @@ for (let i = 0; i < bookList.length; i++) {
     const showMore = document.createElement("a");
     const moreModal = document.createElement("dialog");
     const closeModalButton = document.createElement("button");
-    const addToBag = document.createElement("a");
+    const addToCart = document.createElement("a");
+    const cartPlusIcon = document.createElement("i");
 
     book.classList.add("book");
     book.dataset.i = i;
@@ -65,8 +67,13 @@ for (let i = 0; i < bookList.length; i++) {
         moreModal.close();
     });
     moreModal.append(closeModalButton);
+    addToCart.classList.add("add-to-cart");
+    addToCart.textContent = "Add to cart";
+    cartPlusIcon.classList.add("fa-solid", "fa-cart-plus");
 
-    info.append(title, author, price, showMore, moreModal, addToBag);
+    addToCart.appendChild(cartPlusIcon);
+
+    info.append(title, author, price, showMore, moreModal, addToCart);
 
     book.append(image, info);
 
